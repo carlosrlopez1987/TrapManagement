@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Trap Management</string>
+    <string name="prog_gwss">GWSS PROGRAM</string>
+    <string name="prog_egvm">EGVM PROGRAM</string>
+    <string name="prog_lbam">LBAM PROGRAM</string>
+    <string name="prog_acp">ACP PROGRAM</string>
+    
+    <string name="prog_stats">Trap STATISTICS</string>
+    
+    <string name="greetChooser"><b>Please select a program:</b></string>
+    <string name="enterTrapGridMSG">ENTER TRAP GRID AND SUBGRID:</string>
+    <string name="gridExample">Ex. EW379-12 OR EF389&#8211;W</string>
+    
+    
+    <!-- MAIN MENU BUTTONS -->
+	<string name="gwss"><b>GWSS</b></string>
+	<string name="egvm"><b>EGVM</b></string>
+	<string name="lbam"><b>LBAM</b></string>
+	<string name="acp"><b>ACP</b></string>
+	<string name="jb"><b>Japanese Beattle</b></string>
+	<string name="gm"><b>Gypsy Moth</b></string>
+	<string name="stats"><b>Trap Stats</b></string>
+	<string name="place_trapButtLabel"><b>Place Trap</b></string>
+	<string name="goto_map">View Map</string>
+	
+	<string name="trap_serviced">Serviced</string>
+	<string name="trap_placed">Placed</string>
+	<string name="trap_missing">Missing</string>
+	<string name="trap_removed">Removed</string>
+	<string name="trap_relocated">Relocated</string>
+	<string name="trap_rotated">Rotated</string>
+	<string name="trap_insert">New Insert</string>
+	<string name="trap_baited">Baited</string>
+	<string name="trap_new">New Trap</string>
+	<string name="trap_submitted">Submitted</string>
+	<string name="trap_us">US</string>
+	
+	<string name="cancel_button">Cancel</string>
+	<string name="trap_commit">Commit</string>
+	<string name="closeActivity">Close</string>
+	
+	<!-- =========================================================== -->
+	<!-- STATS LABELS -->
+	
+	<string name="statsLabel">Trap Statistics</string>
+	<string name="statsGWSS">GWSS Totals:</string>
+	<string name="statsEGVM">EGVM Totals:</string>
+	<string name="statsLBAM">LBAM Totals:</string>
+	
+	<string name="totalProgLabel">Total Programs: </string>
+	<string name="total_trapsLabel">Traps:</string>
+	<string name="total_servsLabel">Services:</string>
+	<string name="total_matLabel">Bodies used:</string>
+	
+	<string name="b_viewTraps">View Traps</string>
+	<string name="b_viewServices">View Services</string>
+	<string name="b_viewMaterials">View Materials</string>
+	
+	<!-- END STATS LABELS -->
+	<!-- =========================================================== -->
+	
+	<string name="longLabel">Longitude: </string>
+	<string name="lattLabel">Lattitude: </string>
+	<string name="progLabel"><b>Program: </b></string>
+	<string name="hostLabel"><b>Target Host: </b></string>
+	<string name="placeTrap_title"><b>Place Trap</b></string>
+	
+	
+	<string name="trappingProg">Trapping Program:</string>
+	<string name="locLabel">City Location:</string>
+	<string name="addrLabel"><b>Address: </b></string>
+	<string name="servHistLabel">Service History:</string>
+	<string name="trapGridID_label"><b>Trap Grid ID</b></string>
+	
+	<!-- =========================================================== -->
+	<!-- AddServiceActivity strings -->
+	<!-- =========================================================== -->
+	
+
+</resources>

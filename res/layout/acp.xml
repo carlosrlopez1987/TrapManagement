@@ -1,0 +1,354 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:onClick="regainFocus" >
+		
+    <LinearLayout
+        android:id="@+id/headerLO"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#4B0082"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/headerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/prog_acp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gridLO"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="1dp"
+        android:background="#696969"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical" >
+        
+		    <TextView
+		        android:id="@+id/tv_etTrapgridLabel"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:layout_marginTop="10dp"
+		        android:gravity="center_horizontal"
+		        android:text="@string/enterTrapGridMSG"
+		        android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:textColor="#ffffff"
+		        android:textSize="20sp"
+		        android:textStyle="bold" />
+		
+		    <TextView
+		        android:id="@+id/tvEnterTrapGridMSG"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:layout_marginBottom="10dp"
+		        android:text="@string/gridExample"
+		        android:textAppearance="?android:attr/textAppearanceSmall"
+		        android:textColor="#ffffff"
+		        android:textStyle="bold" />
+		    
+		    <EditText
+		        android:id="@+id/etGrid"
+		        android:layout_width="266dp"
+		        android:layout_height="35dp"
+		        android:layout_gravity="center_horizontal"
+		        android:layout_marginBottom="10dp"
+		        android:background="#ffffff"
+		        android:ems="10"
+		        android:inputType="text"
+		        android:maxWidth="150dp"
+		        android:paddingLeft="10dp"
+		        android:textColor="#000000"
+		        android:textSize="30sp"
+		        android:width="150dp" />
+		    
+		</LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rbGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rbServiced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:checked="true"
+            android:onClick="handleRBClick"
+            android:text="@string/trap_serviced"
+            android:textColor="#008080"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbMissing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:onClick="handleRBClick"
+            android:text="@string/trap_missing"
+            android:textColor="#008080"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:onClick="handleRBClick"
+            android:text="@string/trap_us"
+            android:textColor="#008080"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        
+    </RadioGroup>
+    
+    <LinearLayout
+        android:id="@+id/cbLO_l1"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/cbBaited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/trap_baited"
+            android:onClick="handleCBClick"
+            android:textColor="#008080"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        
+        <CheckBox
+            android:id="@+id/cbNewtrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/trap_new"
+            android:onClick="handleCBClick"
+            android:textColor="#008080"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        
+        <CheckBox
+            android:id="@+id/cbSubmitted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="handleCBClick"
+            android:text="@string/trap_submitted"
+            android:textColor="#008080"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/cbLO_l2"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+        
+        <CheckBox
+            android:id="@+id/cbRelocated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="handleCBClick"
+            android:text="@string/trap_relocated"
+            android:textColor="#008080"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        
+        <CheckBox
+            android:id="@+id/cbRotated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="handleCBClick"
+            android:text="@string/trap_rotated"
+            android:textColor="#008080"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+		
+		    <CheckBox
+		        android:id="@+id/cbRemoved"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:onClick="handleCBClick"
+		        android:text="@string/trap_removed"
+		        android:textColor="#008080"
+		        android:textSize="18sp"
+		        android:textStyle="bold" />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/hostLO"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+    
+		    <TextView
+		        android:id="@+id/checkedTextView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/hostLabel"
+		        android:textColor="#008080"
+		        android:textSize="22sp"
+		        android:textStyle="bold" />
+		    
+		    <EditText
+		        android:id="@+id/etHost"
+		        android:layout_width="150dp"
+		        android:layout_height="30dp"
+		        android:layout_marginLeft="15dp"
+		        android:background="#696969"
+		        android:ems="10"
+		        android:paddingLeft="5dp"
+		        android:textColor="#ffffff"
+		        android:textSize="20sp"
+		        android:textStyle="bold" >
+		
+		        <requestFocus />
+		    </EditText>
+		    
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttsLO"
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttCancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="#8B0000"
+            android:onClick="cancelServiceActivity"
+            android:text="@string/cancel_button"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttCommit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#008080"
+            android:onClick="commit"
+            android:text="@string/trap_commit"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#1E90FF"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="@string/longLabel"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLongData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:text="TextView"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:background="#1E90FF"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tvLatt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:text="@string/lattLabel"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLattData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="TextView"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

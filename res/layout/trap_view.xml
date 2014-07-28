@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:background="#800080" >
+	    
+    	<TextView
+    	    android:id="@+id/textView1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_centerHorizontal="true"
+    	    android:text="TRAP GRID ID"
+    	    android:textAppearance="?android:attr/textAppearanceLarge"
+    	    android:textColor="#ffffff"
+    	    android:textStyle="bold" />
+
+    </RelativeLayout>
+
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="20dp"
+		    android:background="#B0C4DE" >
+    
+    	<TextView
+    	    android:id="@+id/tvTrapProgLabel"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_centerVertical="true"
+    	    android:layout_marginLeft="10dp"
+    	    android:text="@string/trappingProg"
+    	    android:textColor="#000000"
+    	    android:textStyle="bold" />
+
+    	<TextView
+    	    android:id="@+id/tv_TrapProgData"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentTop="true"
+    	    android:layout_centerHorizontal="true"
+    	    android:text="TextView"
+    	    android:textColor="#000000" />
+    
+		</RelativeLayout>
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="20dp"
+		    android:background="#B0C4DE" >
+
+			<TextView
+			    android:id="@+id/tvLocLabel"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="10dp"
+			    android:text="@string/locLabel"
+			    android:textColor="#000000"
+			    android:textStyle="bold" />
+
+    	<TextView
+    	    android:id="@+id/tv_LocData"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentTop="true"
+    	    android:layout_centerHorizontal="true"
+    	    android:text="TextView"
+    	    android:textColor="#000000" />
+    
+		</RelativeLayout>
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="20dp"
+		    android:background="#B0C4DE" >
+
+			<TextView
+			    android:id="@+id/tvLongLabel"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="10dp"
+			    android:text="@string/longLabel"
+			    android:textColor="#000000"
+			    android:textStyle="bold" />
+
+    	<TextView
+    	    android:id="@+id/tv_LongData"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentTop="true"
+    	    android:layout_centerHorizontal="true"
+    	    android:text="TextView"
+    	    android:textColor="#000000" />
+    
+		</RelativeLayout>
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="20dp"
+		    android:background="#B0C4DE" >
+
+			<TextView
+			    android:id="@+id/tvLattLabel"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="10dp"
+			    android:text="@string/lattLabel"
+			    android:textColor="#000000"
+			    android:textStyle="bold" />
+
+    	<TextView
+    	    android:id="@+id/tv_LattData"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentTop="true"
+    	    android:layout_centerHorizontal="true"
+    	    android:text="TextView"
+    	    android:textColor="#000000" />
+    
+		</RelativeLayout>
+		<RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="20dp"
+		    android:background="#B0C4DE" >
+
+			<TextView
+			    android:id="@+id/tvServHistLabel"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="10dp"
+			    android:text="@string/servHistLabel"
+			    android:textColor="#000000"
+			    android:textStyle="bold" />
+    
+		</RelativeLayout>
+		<ScrollView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="100dp">
+			
+		    <LinearLayout
+		        android:id="@+id/scrollView_LO"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+        	
+        	<TextView
+			    	android:id="@+id/tvTTT"
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="10dp"
+			    	android:text="@string/servHistLabel"
+			    	android:textColor="#000000"
+			    	android:textStyle="bold" />
+
+        	<TableRow
+        	    android:id="@+id/tableRow1"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="wrap_content" >
+        	</TableRow>
+        	
+		   </LinearLayout>
+		    
+		</ScrollView>
+		
+</LinearLayout>

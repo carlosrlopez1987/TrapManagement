@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="#ffffff"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:gravity="center|center_horizontal"
+    android:onClick="regainFocus" >
+
+    <TextView
+        android:id="@+id/enterTrapLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/enterTrapGridMSG"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbSubmitted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbInsert"
+        android:layout_below="@+id/cbInsert"
+        android:text="@string/trap_submitted"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbRemoved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbNewtrap"
+        android:layout_below="@+id/cbNewtrap"
+        android:text="@string/trap_removed"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/prog_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/prog_lbam"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/cbBaited"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbRelocated"
+        android:layout_below="@+id/cbRelocated"
+        android:text="@string/trap_baited"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbRotated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbBaited"
+        android:layout_below="@+id/cbBaited"
+        android:text="@string/trap_rotated"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbNewtrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cbRotated"
+        android:layout_below="@+id/cbRotated"
+        android:text="@string/trap_new"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvEnterTrapGridMSG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/cbBaited"
+        android:layout_below="@+id/enterTrapLabel"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/gridExample"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etGridSubgrid"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEnterTrapGridMSG"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="#000000"
+        android:ems="10"
+        android:inputType="text"
+        android:maxWidth="150dp"
+        android:paddingLeft="10dp"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:width="150dp" />
+
+    <CheckBox
+        android:id="@+id/cbRelocated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etGridSubgrid"
+        android:layout_below="@+id/etGridSubgrid"
+        android:layout_marginRight="16dp"
+        android:text="@string/trap_relocated"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbInsert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cbRemoved"
+        android:layout_alignBottom="@+id/cbRemoved"
+        android:layout_alignLeft="@+id/enterTrapLabel"
+        android:text="@string/trap_insert"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/rbg_placed_or_serviced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cbInsert"
+        android:layout_alignLeft="@+id/cbInsert" >
+
+        <RadioButton
+            android:id="@+id/rbServiced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/trap_serviced"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbMissing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trap_missing"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rdPlaced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trap_placed"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trap_us"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbSubmitted"
+        android:layout_marginTop="7dp"
+        android:background="#000000"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttCancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="#FFFF00"
+            android:onClick="cancelServiceActivity"
+            android:text="@string/cancel_button"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttCommit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="#66FF66"
+            android:onClick="commit"
+            android:text="@string/trap_commit"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+   </RelativeLayout>
+

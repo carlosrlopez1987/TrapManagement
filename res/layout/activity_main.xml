@@ -1,0 +1,192 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="${packageName}.${activityClass}" >
+		
+    <LinearLayout
+        android:id="@+id/greetLO"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#1E90FF"
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal" >
+    
+		    <TextView
+		        android:id="@+id/greet"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_centerHorizontal="true"
+		        android:text="@string/greetChooser"
+		        android:textColor="#ffffff"
+		        android:textSize="25sp"
+		        android:textStyle="bold" />
+		    
+		</LinearLayout>
+
+    <Button
+        android:id="@+id/stats"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/egvm"
+        android:layout_below="@+id/gm"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/jb"
+        android:background="#1E90FF"
+        android:minHeight="48dp"
+        android:onClick="handleButton"
+        android:text="@string/stats"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    
+    <Button
+        android:id="@+id/closeProg"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/stats"
+        android:layout_below="@+id/stats"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#8B0000"
+        android:gravity="center|center_horizontal"
+        android:onClick="handleButton"
+        android:text="@string/closeActivity"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/egvm"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/lbam"
+        android:layout_below="@id/lbam"
+        android:layout_marginTop="10dp"
+        android:background="#FF4500"
+        android:gravity="center"
+        android:onClick="handleButton"
+        android:text="@string/egvm"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/acp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/greetLO"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/lbam"
+        android:background="#4B0082"
+        android:gravity="center"
+        android:onClick="handleButton"
+        android:text="@string/acp"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/gwss"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/egvm"
+        android:layout_alignBottom="@+id/egvm"
+        android:layout_alignLeft="@+id/acp"
+        android:background="#FFD700"
+        android:gravity="center|center_horizontal"
+        android:onClick="handleButton"
+        android:text="@string/gwss"
+        android:textColor="#001F3D"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/gm"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/gwss"
+        android:layout_alignBottom="@+id/gwss"
+        android:layout_alignLeft="@+id/jb"
+        android:layout_alignRight="@+id/jb"
+        android:background="#00ff00"
+        android:gravity="center"
+        android:text="@string/gm"
+        android:textColor="#001F3D"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/lbam"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/acp"
+        android:layout_alignBottom="@+id/acp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="28dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:onClick="handleButton"
+        android:text="@string/lbam"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/jb"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_above="@+id/egvm"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@+id/acp"
+        android:background="#008000"
+        android:gravity="center"
+        android:text="@string/jb"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/view_map"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stats"
+        android:layout_alignBottom="@+id/stats"
+        android:layout_alignLeft="@+id/gm"
+        android:layout_alignRight="@+id/gm"
+        android:background="#FF8C00"
+        android:minHeight="48dp"
+        android:onClick="handleButton"
+        android:text="@string/goto_map"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/addTrap_butt"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="158dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/closeProg"
+        android:layout_toRightOf="@+id/stats"
+        android:background="#800080"
+        android:gravity="center"
+        android:onClick="handleButton"
+        android:text="@string/place_trapButtLabel"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+
