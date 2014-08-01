@@ -5,9 +5,11 @@ import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -30,8 +32,8 @@ public class TrapStatsActivity extends Activity {
 	private List< List<Trap> > 		  	   groupedTraps;
 	private List< Pair<String, Integer> > dataTotals;
 	
-	private LinearLayout stats_LLO;			// main linear layout
-	private LinearLayout scroll_LLO;		// scroll linear layout
+	private LinearLayout statsLO;			// main linear layout
+	private LinearLayout scrLO;		// scroll linear layout
 	
 	private List<Trap> traps;
 	private List<TrapService> services;
@@ -39,9 +41,6 @@ public class TrapStatsActivity extends Activity {
 	private List<String> allTrapPrograms;
 	private List<String> allServicePrograms;
 	
-	private TextView tvGWSS;
-	private TextView tvLBAM;
-	private TextView tvEGVM;
 	
 	private TextView tvTProgData;
 	
@@ -81,8 +80,9 @@ public class TrapStatsActivity extends Activity {
 		super.onCreate(savedInstanceState);
         setContentView( R.layout.stats );
         
-        stats_LLO  = (LinearLayout) this.findViewById( R.id.statsLayout );
-        scroll_LLO = (LinearLayout) this.findViewById( R.id.scroll_LO   );
+        // Main layout
+        statsLO  = (LinearLayout) this.findViewById( R.id.statsLayout );
+        scrLO = (LinearLayout) this.findViewById( R.id.scroll_LO   );
 		
 		//to save all different programs
 		allTrapPrograms = new ArrayList<String>();
@@ -98,6 +98,7 @@ public class TrapStatsActivity extends Activity {
     	//========================================================
     	//STATS SECTION FOR DYNAMIC STATS INFO
     	//========================================================
+    	/*
 		wrapperLO = new LinearLayout( this );
     	
     	headerLO = new LinearLayout( this );
@@ -115,8 +116,8 @@ public class TrapStatsActivity extends Activity {
     	
     	materialsLO    = new LinearLayout( this );
     	bViewMaterials = new Button(   	 this );
-    	
-    	// END SECTION FORDYNAMIC STATS
+    	*/
+    	// END SECTION FOR DYNAMIC STATS
         
         trapsMan = new TrapsManager(   this );
         servMan  = new ServiceManager( this );
@@ -124,25 +125,10 @@ public class TrapStatsActivity extends Activity {
         trapsMan.open();
         servMan.open();
         
-        int t_GWSSTraps  = 0;
-        int t_LBAMTraps  = 0;
-        int t_EGVMTraps  = 0;
-        int t_OTHERTraps = 0;
-        
         
         // retrieve all traps and services from respective tables
         services = servMan.getAllServices();
         traps 	 = trapsMan.getAllTraps();
-        
-        this.tvTProgData = (TextView) this.findViewById( R.id.tvTProgData );
-        
-        tvGWSS = (TextView) this.findViewById( R.id.tv_GWSSData );
-        tvLBAM = (TextView) this.findViewById( R.id.tv_LBAMData );
-        tvEGVM = (TextView) this.findViewById( R.id.tv_EGVMData );
-        
-        tvEGVM.setText( " No Traps" );
-        tvLBAM.setText( " No Traps" );
-        tvGWSS.setText( " No Traps" );
         
         // do I have any Services?
         // Note: do not use size method because it will have to count 
@@ -175,40 +161,55 @@ public class TrapStatsActivity extends Activity {
         if ( null != tvTProgData )
           tvTProgData.setText( " " + allTrapPrograms.size() + " Programs" );
         
-        for ( int i = 0; i < allTrapPrograms.size(); i++ )
+        
+        // create trap stats blocks
+        int i = 0;
+        for (; i < allTrapPrograms.size(); i++ )
           {
-        	tvHeader.setText( allTrapPrograms.get( i ).toString() + " Totals:" );
-        	headerLO.addView( tvHeader );
-        	wrapperLO.addView( headerLO );
-        	stats_LLO.addView( wrapperLO );
+        	tvHeader = new TextView( this );
         	
-        	/*
-        	if ( !groupedTraps.get(i).isEmpty() )
-        	  {
-        		
-	        	if ( allTrapPrograms.get( i ).equalsIgnoreCase( "EGVM" ) )
-	        	  {
-	        		tvEGVM.setText( " " + groupedTraps.get( i ).size() );
-	        	  }
-	        	
-	        	if ( allTrapPrograms.get( i ).equalsIgnoreCase( "GWSS" ) )
-		      	  {
-		      		tvGWSS.setText( " " + groupedTraps.get( i ).size() );
-		      	  }
-	        		
-	        	if ( allTrapPrograms.get( i ).equalsIgnoreCase( "LBAM" ) )
-		      	  {
-		      		tvLBAM.setText( " " + groupedTraps.get( i ).size() );
-		      	  }
-        	  }// end if
-        	else 
-        	  {
-        		Toast.makeText( 
-        		  this, 
-        		  allTrapPrograms.get( i ),
-        		  Toast.LENGTH_SHORT
-        	    ).show();
-        	  }*/
+        	tvHeader.setText( 
+        	  allTrapPrograms.get( i ).toString() + 
+        	  " Trap Totals: " +
+        	  groupedTraps.get(i).size()
+        	);
+        	
+        	LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams( 
+        	  LayoutParams.WRAP_CONTENT, 
+        	  LayoutParams.WRAP_CONTENT 
+        	);
+            llp.setMargins( 20, 0, 0, 1 );
+        	tvHeader.setTypeface( Typeface.MONOSPACE, Typeface.BOLD );
+        	tvHeader.setTextSize( TypedValue.COMPLEX_UNIT_SP, 20 );
+        	tvHeader.setBackgroundColor( getResources().getColor( R.color.medTurq ) );
+        	tvHeader.setGravity( Gravity.CENTER_HORIZONTAL );
+        	
+        	
+        	tvHeader.setLayoutParams( llp );
+        	
+        	statsLO.addView( tvHeader );
+          }
+        
+        i = 0;
+        for (; i < allServicePrograms.size(); i++ )
+          {
+        	//================================
+        	tvHeader = new TextView( this );
+        	
+        	tvHeader.setText( 
+        	  allServicePrograms.get( i ).toString() + 
+        	  " Service Totals: " +
+        	  groupedServices.get(i).size()
+        	);
+        	
+        	tvHeader.setLayoutParams( 
+        	  new LayoutParams(
+                LayoutParams.WRAP_CONTENT,
+                LayoutParams.WRAP_CONTENT
+              )
+        	);
+        	
+        	statsLO.addView( tvHeader );
           }// end for loop
 	}
 	

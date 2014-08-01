@@ -138,17 +138,6 @@
         android:orientation="horizontal" >
 
         <CheckBox
-            android:id="@+id/cbBaited"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/trap_baited"
-            android:onClick="handleCBClick"
-            android:textColor="#008080"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-        
-        <CheckBox
             android:id="@+id/cbNewtrap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,15 +149,15 @@
             android:textStyle="bold" />
         
         <CheckBox
-            android:id="@+id/cbSubmitted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:onClick="handleCBClick"
-            android:text="@string/trap_submitted"
-            android:textColor="#008080"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+		        android:id="@+id/cbSubmitted"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"
+		        android:onClick="handleCBClick"
+		        android:text="@string/trap_submitted"
+		        android:textColor="#008080"
+		        android:textSize="18sp"
+		        android:textStyle="bold" />
 
     </LinearLayout>
         

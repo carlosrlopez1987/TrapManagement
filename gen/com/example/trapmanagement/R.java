@@ -1182,7 +1182,7 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f0a0002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070021;
+        public static final int abc_search_url_text_holo=0x7f070022;
         public static final int abc_search_url_text_normal=0x7f070017;
         public static final int abc_search_url_text_pressed=0x7f070019;
         public static final int abc_search_url_text_selected=0x7f070018;
@@ -1203,10 +1203,11 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f070006;
         public static final int common_signin_btn_light_text_focused=0x7f070007;
         public static final int common_signin_btn_light_text_pressed=0x7f070005;
-        public static final int common_signin_btn_text_dark=0x7f070022;
-        public static final int common_signin_btn_text_light=0x7f070023;
+        public static final int common_signin_btn_text_dark=0x7f070023;
+        public static final int common_signin_btn_text_light=0x7f070024;
         public static final int egvmColor=0x7f070020;
         public static final int gwssColor=0x7f07001f;
+        public static final int medTurq=0x7f070021;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f07000f;
         /** 
          Wallet colors to support consistent Wallet fragment holo dark UI in client application
@@ -1225,8 +1226,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f070011;
         public static final int wallet_holo_blue_light=0x7f070015;
         public static final int wallet_link_text_light=0x7f070016;
-        public static final int wallet_primary_text_holo_light=0x7f070024;
-        public static final int wallet_secondary_text_holo_dark=0x7f070025;
+        public static final int wallet_primary_text_holo_light=0x7f070025;
+        public static final int wallet_secondary_text_holo_dark=0x7f070026;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1468,7 +1469,7 @@ containing a value of this type.
         public static final int wood_tm=0x7f020077;
     }
     public static final class id {
-        public static final int acp=0x7f080072;
+        public static final int acp=0x7f080071;
         public static final int action_bar=0x7f08002e;
         public static final int action_bar_activity_content=0x7f080027;
         public static final int action_bar_container=0x7f08002d;
@@ -1481,71 +1482,71 @@ containing a value of this type.
         public static final int action_menu_presenter=0x7f080029;
         public static final int action_mode_close_button=0x7f080036;
         public static final int activity_chooser_view_content=0x7f080037;
-        public static final int addTrap_butt=0x7f080075;
+        public static final int addTrap_butt=0x7f080074;
         public static final int always=0x7f08001e;
-        public static final int b_egvmVMaterials=0x7f08009a;
-        public static final int b_egvmVServices=0x7f080098;
-        public static final int b_egvmVTraps=0x7f080096;
-        public static final int b_gwssVMaterials=0x7f080093;
-        public static final int b_gwssVServices=0x7f080091;
-        public static final int b_gwssVTraps=0x7f08008e;
+        public static final int b_egvmVMaterials=0x7f08009b;
+        public static final int b_egvmVServices=0x7f080099;
+        public static final int b_egvmVTraps=0x7f080097;
+        public static final int b_gwssVMaterials=0x7f080094;
+        public static final int b_gwssVServices=0x7f080092;
+        public static final int b_gwssVTraps=0x7f08008f;
         public static final int beginning=0x7f080023;
         public static final int book_now=0x7f080010;
-        public static final int buttCancel=0x7f080064;
-        public static final int buttCommit=0x7f080065;
-        public static final int buttsLO=0x7f080063;
+        public static final int buttCancel=0x7f080063;
+        public static final int buttCommit=0x7f080064;
+        public static final int buttsLO=0x7f080062;
         public static final int buyButton=0x7f08000a;
         public static final int buy_now=0x7f08000f;
         public static final int buy_with_google=0x7f08000e;
-        public static final int cbBaited=0x7f080059;
-        public static final int cbInsert=0x7f08007f;
+        public static final int cbBaited=0x7f080075;
+        public static final int cbInsert=0x7f08007e;
         public static final int cbLO_l1=0x7f080058;
-        public static final int cbLO_l2=0x7f08005c;
-        public static final int cbNewtrap=0x7f08005a;
-        public static final int cbRelocated=0x7f08005d;
-        public static final int cbRemoved=0x7f08005f;
-        public static final int cbRotated=0x7f08005e;
-        public static final int cbSubmitted=0x7f08005b;
+        public static final int cbLO_l2=0x7f08005b;
+        public static final int cbLO_l3=0x7f08007f;
+        public static final int cbNewtrap=0x7f080059;
+        public static final int cbRelocated=0x7f08005c;
+        public static final int cbRemoved=0x7f08005e;
+        public static final int cbRotated=0x7f08005d;
+        public static final int cbSubmitted=0x7f08005a;
         public static final int checkbox=0x7f08003f;
-        public static final int checkedTextView1=0x7f080061;
+        public static final int checkedTextView1=0x7f080060;
         public static final int classic=0x7f080011;
-        public static final int closeProg=0x7f080070;
+        public static final int closeProg=0x7f08006f;
         public static final int collapseActionView=0x7f080020;
         public static final int default_activity_button=0x7f08003a;
         public static final int dialog=0x7f080021;
         public static final int disableHome=0x7f08001b;
         public static final int dropdown=0x7f080022;
         public static final int edit_query=0x7f080042;
-        public static final int egvm=0x7f08006d;
+        public static final int egvm=0x7f08006c;
         public static final int end=0x7f080025;
-        public static final int enterTrapLabel=0x7f08007e;
         public static final int etAddr=0x7f080088;
         public static final int etCity=0x7f080084;
         public static final int etGrid=0x7f080053;
         public static final int etGridSubgrid=0x7f080079;
-        public static final int etHost=0x7f080062;
+        public static final int etHost=0x7f080061;
         public static final int etProg=0x7f080085;
         public static final int expand_activities_button=0x7f080038;
         public static final int expanded_menu=0x7f08003e;
-        public static final int gm=0x7f08006e;
+        public static final int gm=0x7f08006d;
         public static final int grayscale=0x7f080012;
-        public static final int greet=0x7f08006b;
-        public static final int greetLO=0x7f08006a;
+        public static final int greet=0x7f08006a;
+        public static final int greetLO=0x7f080069;
         public static final int gridLO=0x7f080050;
-        public static final int gwss=0x7f080073;
+        public static final int gwss=0x7f080072;
         public static final int headerLO=0x7f08004e;
         public static final int headerLabel=0x7f08004f;
         public static final int holo_dark=0x7f080005;
         public static final int holo_light=0x7f080006;
         public static final int home=0x7f080026;
         public static final int homeAsUp=0x7f080018;
-        public static final int hostLO=0x7f080060;
+        public static final int hostLO=0x7f08005f;
         public static final int hybrid=0x7f080004;
         public static final int icon=0x7f08003c;
         public static final int ifRoom=0x7f08001d;
         public static final int image=0x7f080039;
-        public static final int jb=0x7f08006f;
-        public static final int lbam=0x7f080071;
+        public static final int jb=0x7f08006e;
+        public static final int lbam=0x7f080070;
         public static final int linearLayout1=0x7f080077;
         public static final int linearLayout2=0x7f08007d;
         public static final int listMode=0x7f080014;
@@ -1572,7 +1573,7 @@ containing a value of this type.
         public static final int sandbox=0x7f080008;
         public static final int satellite=0x7f080002;
         public static final int scrollView_LO=0x7f0800a7;
-        public static final int scroll_LO=0x7f08009d;
+        public static final int scroll_LO=0x7f08008c;
         public static final int search_badge=0x7f080044;
         public static final int search_bar=0x7f080043;
         public static final int search_button=0x7f080045;
@@ -1589,7 +1590,7 @@ containing a value of this type.
         public static final int showHome=0x7f080017;
         public static final int showTitle=0x7f080019;
         public static final int split_action_bar=0x7f080030;
-        public static final int stats=0x7f08006c;
+        public static final int stats=0x7f08006b;
         public static final int statsLayout=0x7f080089;
         public static final int strict_sandbox=0x7f080009;
         public static final int submit_area=0x7f08004b;
@@ -1604,38 +1605,38 @@ containing a value of this type.
         public static final int tvCity=0x7f080083;
         public static final int tvEnterTrapGridMSG=0x7f080052;
         public static final int tvHost=0x7f080082;
-        public static final int tvLatt=0x7f080068;
-        public static final int tvLattData=0x7f080069;
+        public static final int tvLatt=0x7f080067;
+        public static final int tvLattData=0x7f080068;
         public static final int tvLattLabel=0x7f0800a4;
         public static final int tvLocLabel=0x7f0800a0;
-        public static final int tvLong=0x7f080066;
-        public static final int tvLongData=0x7f080067;
+        public static final int tvLong=0x7f080065;
+        public static final int tvLongData=0x7f080066;
         public static final int tvLongLabel=0x7f0800a2;
         public static final int tvProg=0x7f080086;
         public static final int tvServHistLabel=0x7f0800a6;
         public static final int tvTProgData=0x7f08008b;
         public static final int tvTTT=0x7f0800a8;
-        public static final int tvTotalGWSS=0x7f08008c;
-        public static final int tvTotalLBAM=0x7f08009b;
+        public static final int tvTotalGWSS=0x7f08008d;
+        public static final int tvTotalLBAM=0x7f08009c;
         public static final int tvTotalPrograms=0x7f08008a;
-        public static final int tvTotalegvm=0x7f080094;
+        public static final int tvTotalegvm=0x7f080095;
         public static final int tvTrapProgLabel=0x7f08009e;
-        public static final int tv_EGVMData=0x7f080095;
-        public static final int tv_GWSSData=0x7f08008d;
-        public static final int tv_LBAMData=0x7f08009c;
+        public static final int tv_EGVMData=0x7f080096;
+        public static final int tv_GWSSData=0x7f08008e;
+        public static final int tv_LBAMData=0x7f08009d;
         public static final int tv_LattData=0x7f0800a5;
         public static final int tv_LocData=0x7f0800a1;
         public static final int tv_LongData=0x7f0800a3;
         public static final int tv_TrapProgData=0x7f08009f;
         public static final int tv_etTrapgridLabel=0x7f080051;
-        public static final int tv_matEGVMData=0x7f080099;
-        public static final int tv_matGWSSData=0x7f080092;
-        public static final int tv_servEGVMData=0x7f080097;
-        public static final int tv_servGWSSData=0x7f080090;
-        public static final int tv_servTotals1=0x7f08008f;
+        public static final int tv_matEGVMData=0x7f08009a;
+        public static final int tv_matGWSSData=0x7f080093;
+        public static final int tv_servEGVMData=0x7f080098;
+        public static final int tv_servGWSSData=0x7f080091;
+        public static final int tv_servTotals1=0x7f080090;
         public static final int up=0x7f080033;
         public static final int useLogo=0x7f080016;
-        public static final int view_map=0x7f080074;
+        public static final int view_map=0x7f080073;
         public static final int withText=0x7f08001f;
         public static final int wrap_content=0x7f08000d;
     }
@@ -1700,7 +1701,8 @@ containing a value of this type.
         public static final int place_trap=0x7f03001f;
         public static final int stats=0x7f030020;
         public static final int support_simple_spinner_dropdown_item=0x7f030021;
-        public static final int trap_view=0x7f030022;
+        public static final int temp=0x7f030022;
+        public static final int trap_view=0x7f030023;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1744,7 +1746,7 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f06002b;
         public static final int acp=0x7f060039;
-        public static final int addrLabel=0x7f06005f;
+        public static final int addrLabel=0x7f060060;
         public static final int app_name=0x7f06002d;
         public static final int auth_client_needs_enabling_title=0x7f060001;
         public static final int auth_client_needs_installation_title=0x7f060002;
@@ -1752,11 +1754,11 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f060004;
         public static final int auth_client_requested_by_msg=0x7f060005;
         public static final int auth_client_using_bad_version_title=0x7f060000;
-        public static final int b_viewMaterials=0x7f060057;
-        public static final int b_viewServices=0x7f060056;
-        public static final int b_viewTraps=0x7f060055;
-        public static final int cancel_button=0x7f06004a;
-        public static final int closeActivity=0x7f06004c;
+        public static final int b_viewMaterials=0x7f060058;
+        public static final int b_viewServices=0x7f060057;
+        public static final int b_viewTraps=0x7f060056;
+        public static final int cancel_button=0x7f06004b;
+        public static final int closeActivity=0x7f06004d;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1855,39 +1857,39 @@ containing a value of this type.
         /**  MAIN MENU BUTTONS 
          */
         public static final int gwss=0x7f060036;
-        public static final int hostLabel=0x7f06005b;
+        public static final int hostLabel=0x7f06005c;
         public static final int jb=0x7f06003a;
-        public static final int lattLabel=0x7f060059;
+        public static final int lattLabel=0x7f06005a;
         public static final int lbam=0x7f060038;
-        public static final int locLabel=0x7f06005e;
+        public static final int locLabel=0x7f06005f;
         /**  END STATS LABELS 
  =========================================================== 
          */
-        public static final int longLabel=0x7f060058;
-        public static final int placeTrap_title=0x7f06005c;
+        public static final int longLabel=0x7f060059;
+        public static final int placeTrap_title=0x7f06005d;
         public static final int place_trapButtLabel=0x7f06003d;
-        public static final int progLabel=0x7f06005a;
+        public static final int progLabel=0x7f06005b;
         public static final int prog_acp=0x7f060031;
         public static final int prog_egvm=0x7f06002f;
         public static final int prog_gwss=0x7f06002e;
         public static final int prog_lbam=0x7f060030;
         public static final int prog_stats=0x7f060032;
-        public static final int servHistLabel=0x7f060060;
+        public static final int servHistLabel=0x7f060061;
         public static final int stats=0x7f06003c;
-        public static final int statsEGVM=0x7f06004f;
-        public static final int statsGWSS=0x7f06004e;
-        public static final int statsLBAM=0x7f060050;
+        public static final int statsEGVM=0x7f060050;
+        public static final int statsGWSS=0x7f06004f;
+        public static final int statsLBAM=0x7f060051;
         /**  =========================================================== 
  STATS LABELS 
          */
-        public static final int statsLabel=0x7f06004d;
-        public static final int totalProgLabel=0x7f060051;
-        public static final int total_matLabel=0x7f060054;
-        public static final int total_servsLabel=0x7f060053;
-        public static final int total_trapsLabel=0x7f060052;
-        public static final int trapGridID_label=0x7f060061;
+        public static final int statsLabel=0x7f06004e;
+        public static final int totalProgLabel=0x7f060052;
+        public static final int total_matLabel=0x7f060055;
+        public static final int total_servsLabel=0x7f060054;
+        public static final int total_trapsLabel=0x7f060053;
+        public static final int trapGridID_label=0x7f060062;
         public static final int trap_baited=0x7f060046;
-        public static final int trap_commit=0x7f06004b;
+        public static final int trap_commit=0x7f06004c;
         public static final int trap_insert=0x7f060045;
         public static final int trap_missing=0x7f060041;
         public static final int trap_new=0x7f060047;
@@ -1898,7 +1900,8 @@ containing a value of this type.
         public static final int trap_serviced=0x7f06003f;
         public static final int trap_submitted=0x7f060048;
         public static final int trap_us=0x7f060049;
-        public static final int trappingProg=0x7f06005d;
+        public static final int trap_wick=0x7f06004a;
+        public static final int trappingProg=0x7f06005e;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

@@ -36,6 +36,7 @@
 	<string name="trap_new">New Trap</string>
 	<string name="trap_submitted">Submitted</string>
 	<string name="trap_us">US</string>
+	<string name="trap_wick">New Wick</string>
 	
 	<string name="cancel_button">Cancel</string>
 	<string name="trap_commit">Commit</string>

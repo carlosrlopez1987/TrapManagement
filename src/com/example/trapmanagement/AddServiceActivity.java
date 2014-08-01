@@ -230,10 +230,17 @@ public class AddServiceActivity extends Activity implements LocationListener {
 	}
 	
 	private void initializeCheckBoxes(){
-		
-	  cbBaited 		= (CheckBox) findViewById( R.id.cbBaited 	);
-	  cbNewInsert   = (CheckBox) findViewById( R.id.cbInsert    );
-	//cbNewWick		= (CheckBox) findViewById( R.id.cbNewWick 	);
+	  // initialize it if trap is not gwss or acp
+	  if ( this.Layout2Display != R.id.gwss || this.Layout2Display != R.id.acp )
+	    cbBaited 		= (CheckBox) findViewById( R.id.cbBaited 	);
+	  
+	  // initialize it if trap is not gwss or acp 
+	  if ( this.Layout2Display != R.id.gwss || this.Layout2Display != R.id.acp )
+	    cbNewInsert = (CheckBox) findViewById( R.id.cbInsert    );
+	  
+	  
+	  //cbNewWick		= (CheckBox) findViewById( R.id.cbNewWick 	);
+	  
 	  cbNewtrap 	= (CheckBox) findViewById( R.id.cbNewtrap   );
 	  cbRelocated 	= (CheckBox) findViewById( R.id.cbRelocated );
 	  cbRemoved 	= (CheckBox) findViewById( R.id.cbRemoved   );
@@ -278,19 +285,36 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		  
 		  switch ( cbID ){
 		    case R.id.cbBaited:
+		      // This code prevents the check box from being 
+		      // unchecked if 'new trap' is still checked
 		      if ( cbNewtrap.isChecked() )
 			      checkCB( cbBaited );
 		        break;
 		    case R.id.cbInsert:
-		    	
-			      break;
+		      // This code prevents the check box from being 
+		      // unchecked if 'new trap' is still checked
+		      if ( cbNewtrap.isChecked() )
+			      checkCB( cbBaited );
+			    break;
 		    case R.id.cbNewtrap:
 		      if ( !cbNewtrap.isChecked() )
-		    	uncheckCB( cbSubmitted );
+		        {
+		    	  // cbNewTrap has been unchecked so it will not be submitted, but
+		    	  // Only disable trap submit if it is not an insert applicable trap
+		    	  // because traps with inserts submit the insert and not actual trap
+		    	  if ( cbNewInsert == null )
+		            {
+		    	      uncheckCB( cbSubmitted );
+		            }
+		        }
 		      else
-		    	if ( !cbBaited.isChecked() )
-			      checkCB( cbBaited );
-			      break;
+		    	// cbNewtrap has been checked
+		    	if ( cbBaited != null && !cbBaited.isChecked() )
+	    		  checkCB( cbBaited );
+		        
+	    		if ( cbNewInsert != null && !cbNewInsert.isChecked() )
+	    		  checkCB( cbNewInsert );
+			break;
 		    case R.id.cbRelocated:
 		    	if ( cbRelocated.isChecked() )
 		    	  {
@@ -311,20 +335,37 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		    	  
 		    	  uncheckCB( cbNewtrap );
 		    	  disableCheckBox( cbNewtrap );
-		    	  uncheckCB( cbBaited );
-		    	  disableCheckBox( cbBaited );
+		    	  
+		    	  if ( cbBaited != null )
+		    	    {
+		    		  uncheckCB( cbBaited );
+		    	      disableCheckBox( cbBaited );
+		    	    }
+		    	  if ( cbNewInsert != null )
+		    	    {
+		    		  uncheckCB( cbNewInsert );
+		    	      disableCheckBox( cbNewInsert );
+		    	    }
+		    	  
 		        }
 		      else
 		        {
 		    	  enableCheckBox( cbRotated );
 		    	  enableCheckBox( cbRelocated );
 		    	  enableCheckBox( cbNewtrap );
-		    	  enableCheckBox( cbBaited );
+		    	  
+		    	  if ( cbBaited != null )
+		    	    enableCheckBox( cbBaited );
+		    	  
+		    	  if ( cbNewInsert != null )
+			    	enableCheckBox( cbNewInsert );
 		    	  
 		    	  if ( R.id.rbMissing == rbg.getCheckedRadioButtonId() )
 		    	    {
-		    	      checkCB( this.cbNewtrap );
-		    	      checkCB( this.cbBaited  );
+		    		  if ( cbNewInsert != null )
+		    	        checkCB( this.cbNewtrap );
+		    	      if ( cbBaited != null )
+		    	        checkCB( this.cbBaited  );
 		    	    }
 		        }
 			      break;
@@ -339,14 +380,18 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		    	  enableCheckBox( cbRemoved );
 		    	  enableCheckBox( cbRelocated );
 		        }
-			      break;
+			  break;
 		    case R.id.cbSubmitted:
-		      if ( cbSubmitted.isChecked() )
+		      if ( cbSubmitted.isChecked() && !cbRemoved.isChecked() )
 		        {
 		    	  checkCB( cbNewtrap );
-		    	  checkCB( cbBaited  );
+		    	  
+		    	  if ( cbBaited != null )
+		    		checkCB( cbBaited  );
+		    	  if ( cbNewInsert != null )
+		    		checkCB( cbNewInsert );
 		        }
-			      break;
+			  break;
 		  }
 		}
 		
@@ -358,21 +403,33 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		}
 		
 		public void checkCB( CheckBox cb ){
-			if ( !cb.isChecked() )
+			if ( cb != null )
 			  {
-			    cb.setChecked( true );
-			    cb.setTextColor( getResources().getColor( R.color.cbChecked ) );
+				if ( !cb.isChecked() )
+				  {
+					cb.setChecked( true );
+					cb.setTextColor( getResources().getColor( R.color.cbChecked ) );
+				  }
+				else
+				  cb.setTextColor( getResources().getColor( R.color.cbChecked ) );
 			  }
 		}
 		
 		public void handleRBClick( View view ){
 			switch ( rbg.getCheckedRadioButtonId() ){
 		      case R.id.rbServiced:
-		    	  uncheckCB( this.cbNewtrap );
+		    	if ( cbBaited != null )
 		    	  uncheckCB( this.cbBaited );
+		    	if ( cbNewInsert != null )
+		    		uncheckCB( cbNewInsert );
 		    	  
 		    	  enableCheckBox( this.cbNewtrap );
-		    	  enableCheckBox( this.cbBaited );
+		    	  if ( cbBaited != null )
+		    	    enableCheckBox( this.cbBaited );
+		    	  
+		    	  if ( cbNewInsert != null )
+		    		enableCheckBox( this.cbNewInsert );
+		    	  
 		    	  enableCheckBox( this.cbRelocated );
 		    	  enableCheckBox( this.cbRemoved );
 		    	  enableCheckBox( this.cbRotated );
@@ -382,32 +439,54 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		    	if ( !cbRemoved.isChecked() )
 		    	  {
 		    	    enableCheckBox( this.cbNewtrap );
-		    	    enableCheckBox( this.cbBaited );
+		    	    if ( cbBaited != null )
+		    	      enableCheckBox( this.cbBaited );
+		    	    if ( cbNewInsert != null )
+		    	    	enableCheckBox( cbNewInsert );
 		    	    enableCheckBox( this.cbRelocated );
 		    	    enableCheckBox( this.cbRemoved );
 		    	    enableCheckBox( this.cbRotated );
 		    	  
 		    	    uncheckCB( this.cbSubmitted );
 		    	    disableCheckBox( this.cbSubmitted );
-		    	  
+		    	    
+		    	    if ( cbNewInsert != null )
+		    	      checkCB( cbNewInsert );
 		    	    checkCB( this.cbNewtrap );
-		    	    checkCB( this.cbBaited  );
+		    	    if ( cbBaited != null )
+		    	      checkCB( this.cbBaited  );
 		    	  }
 		    	else
 		    	  {
 		    		uncheckCB( this.cbNewtrap );
 			    	disableCheckBox( this.cbNewtrap );
 			    	  
-			    	uncheckCB( this.cbBaited );
-			    	disableCheckBox( this.cbBaited );
+			    	if ( cbBaited != null )
+			    	  {
+			    		uncheckCB( this.cbBaited );
+			    		disableCheckBox( this.cbBaited );
+			    	  }
+			    	if ( cbNewInsert != null )
+			    	  {
+			    		uncheckCB( cbNewInsert );
+			    		disableCheckBox( cbNewInsert );
+			    	  }
 		    	  }
 		      break;
 		      case R.id.rbUS:
 		    	  uncheckCB( this.cbNewtrap );
 		    	  disableCheckBox( this.cbNewtrap );
 		    	  
-		    	  uncheckCB( this.cbBaited );
-		    	  disableCheckBox( this.cbBaited );
+		    	  if ( cbBaited != null )
+		    	    {
+		    		  uncheckCB( this.cbBaited );
+		    		  disableCheckBox( this.cbBaited );
+		    	    }
+		    	  if ( cbNewInsert != null )
+		    	    {
+		    		  uncheckCB( cbNewInsert );
+		    		  disableCheckBox( cbNewInsert );
+		    	    }
 		    	  
 		    	  uncheckCB( this.cbRelocated );
 		    	  disableCheckBox( this.cbRelocated );
@@ -446,6 +525,10 @@ public class AddServiceActivity extends Activity implements LocationListener {
 					    if ( insertServID > 0 )
 					      adMsg = "Service Activity Added!";
 					  }
+					else 
+					  {
+						adMsg = "Service Data was not retrieved!";
+					  }
 					
 					Toast.makeText( 
 					  this, 
@@ -482,128 +565,130 @@ public class AddServiceActivity extends Activity implements LocationListener {
 		
 		private void compileServiceData(){
 			
-			AlertDialog.Builder dlgAlert;
-			String alertMSG = null;
+		  AlertDialog.Builder dlgAlert;
+		  String alertMSG = null;
 			
-			this.host = etHost.getText().toString();
-			this.grid = etGrid.getText().toString() + "-" + activeProg;
+		  this.host = etHost.getText().toString();
+		  this.grid = etGrid.getText().toString() + "-" + activeProg;
 			
-			if ( grid.isEmpty() )
-			  {
-				alertMSG = "Grid field is empty! Please make sure to fill every field.";
-				
-				dlgAlert = new AlertDialog.Builder( this );
-
-	        	dlgAlert.setMessage( alertMSG );
-	        	dlgAlert.setTitle( "Grid Field Problem" );
-	        	
-	        	dlgAlert.setPositiveButton("OK", 
-	        	  new DialogInterface.OnClickListener(){
-	        		
-	                public void onClick( DialogInterface dialog, int which ){
-	                  // add an onFocusListener
-	                  AddServiceActivity.this.etGrid.setOnFocusChangeListener(
-	                	// Highlight the text inside the textbox
-	                    new OnFocusChangeListener()
-	                    {
-	                	  public void onFocusChange(View v, boolean hasFocus)
-	                	  {
-	                	    if ( hasFocus )
-	                	      ((EditText)v).selectAll();
-	                      }
-	                    }
-	                  );	
-	                	
-	                  AddServiceActivity.this.etGrid.requestFocus();
-	                }
-	            });
-	        	
-	        	if ( host.isEmpty() )
-		  		  {
-		  			alertMSG = "Host field is empty! Please make sure to fill every field.";
-		  			
-		  			dlgAlert = new AlertDialog.Builder( this );
-		
-		          	dlgAlert.setMessage( alertMSG );
-		          	dlgAlert.setTitle( "Host Field Problem" );
-		          	
-		          	dlgAlert.setPositiveButton("OK", 
-		          	  new DialogInterface.OnClickListener(){
-		          		
-		                  public void onClick( DialogInterface dialog, int which ){
-		                    // add an onFocusListener
-		                	  AddServiceActivity.this.etHost.setOnFocusChangeListener(
-		                  	// Highlight the text inside the textbox
-		                      new OnFocusChangeListener()
-		                      {
-		                  	  public void onFocusChange(View v, boolean hasFocus)
-		                  	  {
-		                  	    if ( hasFocus )
-		                  	      ((EditText)v).selectAll();
-		                        }
-		                      }
-		                    );	
-		                  	
-		                    AddServiceActivity.this.etHost.requestFocus();
-		                  }
-		              });
-		        	
-		        	dlgAlert.setCancelable(true);
-		        	AlertDialog dialog = dlgAlert.create();
-		        	dialog.show();
-				  }
-
-		    switch ( rbg.getCheckedRadioButtonId() )
+		  if ( grid.isEmpty() )
 		    {
-			    case R.id.rbServiced:
+			  alertMSG = "Grid field is empty! Please make sure to fill every field.";
+				
+			  dlgAlert = new AlertDialog.Builder( this );
+
+	          dlgAlert.setMessage( alertMSG );
+	          dlgAlert.setTitle( "Grid Field Problem" );
+	        	
+	          dlgAlert.setPositiveButton(
+	        	"OK", 
+	            new DialogInterface.OnClickListener(){
+	              public void onClick( DialogInterface dialog, int which ){
+	                // add an onFocusListener
+	                AddServiceActivity.this.etGrid.setOnFocusChangeListener(
+	                  // Highlight the text inside the textbox
+	                  new OnFocusChangeListener(){
+	                	public void onFocusChange( View v, boolean hasFocus ){
+	                	  if ( hasFocus )
+	                	    ((EditText)v).selectAll();
+	                    }// end onfocuschange
+	                  }//OnFocusChangeListener()
+	                );	
+	                	
+	                AddServiceActivity.this.etGrid.requestFocus();
+	              }
+	            }
+	          );//end onclicklistener
+		    }
+	        	
+	        if ( host.isEmpty() )
+		  	  {
+		  	    alertMSG = "Host field is empty! Please make sure to fill every field.";
+		  			
+		  		dlgAlert = new AlertDialog.Builder( this );
+		
+		        dlgAlert.setMessage( alertMSG );
+		        dlgAlert.setTitle( "Host Field Problem" );
+		          	
+		        dlgAlert.setPositiveButton(
+		          "OK", 
+		          new DialogInterface.OnClickListener(){
+		          	public void onClick( DialogInterface dialog, int which ){
+		              // add an onFocusListener
+		              AddServiceActivity.this.etHost.setOnFocusChangeListener(
+		                // Highlight the text inside the textbox
+		                new OnFocusChangeListener(){
+		                  public void onFocusChange( View v, boolean hasFocus ){
+		                  	if ( hasFocus )
+		                  	  ((EditText)v).selectAll();
+		                  }
+		                }
+		              );	
+		                  	
+		              AddServiceActivity.this.etHost.requestFocus();
+		            }
+		          }
+		        );
+		        	
+		        dlgAlert.setCancelable(true);
+		        AlertDialog dialog = dlgAlert.create();
+		        dialog.show();
+			  }
+	        
+	        // gather service activity data
+	          int tmpRBID = -1;
+	          tmpRBID = rbg.getCheckedRadioButtonId();
+	          
+	          switch ( tmpRBID )
+	            {
+			      case R.id.rbServiced:
 			    	appendServiceActivity( "X:" );
 			    	break;
-			    case R.id.rbMissing:
+			      case R.id.rbMissing:
 			    	appendServiceActivity( "M:" );
 			    	break;
-			    case R.id.rbUS:
+			      case R.id.rbUS:
 			    	appendServiceActivity( "US:" );
 			    	break;
-		    }
+		        }
 		    
-		    if ( rbg.getCheckedRadioButtonId() != R.id.rbUS )
-		      {
-			    if ( cbNewtrap.isChecked() )
-			      {
-			    	appendServiceActivity( "NT:" );
-			      }
+		      if ( tmpRBID != R.id.rbUS )
+		        {
+			      if ( cbNewtrap.isChecked() )
+			        {
+			    	  appendServiceActivity( "NT:" );
+			        }
 			    
-			    if ( cbBaited.isChecked() )
-			      {
-			    	appendServiceActivity( "B:" );
-			    	cbRemoved.setActivated( false );
-			      }
+			      if ( cbBaited != null && cbBaited.isChecked() )
+			        {
+			    	  appendServiceActivity( "B:" );
+			        }
+			      
+			      if ( cbNewInsert != null && cbNewInsert.isChecked() )
+			        {
+			    	  appendServiceActivity( "I:" );
+			        }
 			    
-			    if ( cbRelocated.isChecked() )
-			      {
-			    	appendServiceActivity( "RL:" );
-			    	cbRemoved.setActivated( false );
-			      }
+			      if ( cbRelocated.isChecked() )
+			        {
+			    	  appendServiceActivity( "RL:" );
+			        }
 			    
-			    if ( cbRemoved.isChecked() )
-			      {
-			    	appendServiceActivity( "RM:" );
-			    	cbRotated.setActivated( false );
-			    	cbRelocated.setActivated( false );
-			      }
+			      if ( cbRemoved.isChecked() )
+			        {
+			    	  appendServiceActivity( "RM:" );
+			        }
 			    
-			    if ( cbRotated.isChecked() )
-			      {
-			    	appendServiceActivity( "R:" );
-			    	cbRemoved.setActivated( false );
-			      }
+			      if ( cbRotated.isChecked() )
+			        {
+			    	  appendServiceActivity( "R:" );
+			        }
 			    
-			    if ( cbSubmitted.isChecked() )
-			      {
-			    	appendServiceActivity( "S:" );
-			      }
-		      }
-			}
+			      if ( cbSubmitted.isChecked() )
+			        {
+			    	  appendServiceActivity( "S:" );
+			        }
+		        }//END if ( rbg.getCheckedRadioButtonId() != R.id.rbUS )
 		}
 		
 		private void appendServiceActivity( String activity ){

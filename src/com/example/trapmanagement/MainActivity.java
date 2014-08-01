@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
       if ( buttID != R.id.egvm && buttID != R.id.acp )
         switch ( buttID ){
 		  case R.id.lbam:
-			  startNewActivity( LbamActivity.class, R.id.lbam );
+			  startAddServiceActivity( buttID );
 		  break;
 		  case R.id.addTrap_butt:
 			  startNewActivity( PlaceTrapActivity.class, R.id.addTrap_butt );
