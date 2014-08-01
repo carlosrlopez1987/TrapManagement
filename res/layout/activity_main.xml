@@ -188,5 +188,20 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/viewTrap_butt"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="158dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/closeProg"
+        android:layout_below="@+id/closeProg"
+        android:background="#20B2AA"
+        android:gravity="center"
+        android:onClick="handleButton"
+        android:text="view trap"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
 

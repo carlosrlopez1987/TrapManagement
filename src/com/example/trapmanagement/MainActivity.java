@@ -36,6 +36,9 @@ public class MainActivity extends Activity {
 		  case R.id.acp:
 			  startNewActivity( AcpActivity.class, R.id.acp );
 		  break;
+		  case R.id.viewTrap_butt:
+			  startNewActivity( TrapViewActivity.class, R.id.viewTrap_butt );
+			  break;
 		  case R.id.closeProg:
 			finish();
 		  break;

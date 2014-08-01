@@ -29,7 +29,7 @@ public class AddServiceActivity extends Activity implements LocationListener {
 	private   TrapsManager trapMan;
 	
 	private String   serviceData = null;
-	private String 			grid = null;
+	private String 		 	grid = null;
 	private String 			prog = null;
 	private String 			host = null;
 	

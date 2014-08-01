@@ -116,6 +116,15 @@
 	            android:name="android.support.PARENT_ACTIVITY"
 	            android:value="com.example.trapmanagement.MainActivity" />
     	</activity>
+    	
+    	<activity
+	        android:name="com.example.trapmanagement.TrapViewActivity"
+	        android:label="@string/app_name"
+	        android:screenOrientation="portrait" >
+	        <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value="com.example.trapmanagement.MainActivity" />
+    	</activity>
         
     </application>
 
